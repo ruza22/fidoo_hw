@@ -52,7 +52,8 @@ print(f"Number of companies in the data:{n_companies}")
 
 n_contacts = contacts.groupby("employee_id")["contact_id"].count()
 n_contacts_bytype = contacts.groupby(["employee_id", "contact_type"])["contact_id"].count()
-
+n_contacts.to_csv("tables/n_contacts.csv", header = ["count"])
+n_contacts_bytype.to_csv("tables/n_contacts_bytype.csv", header = ["count"])
 
 
 
